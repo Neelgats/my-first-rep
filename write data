@@ -13,3 +13,5 @@ barr = bytearray([170, 85, 6, 1, 4]) + byte_representation + bytearray([0, 103])
 while True:
     ser.write(barr)
     time.sleep(1)
+
+
