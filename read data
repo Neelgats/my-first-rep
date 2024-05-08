@@ -1,0 +1,15 @@
+import serial
+import time
+
+ser = serial.Serial('COM7', 115200)
+
+integer_value = 50
+byte_length = 1
+byte_order = 'little'
+byte_representation = integer_value.to_bytes(byte_length, byte_order)
+
+barr = bytearray([170, 85, 6, 1, 4]) + byte_representation + bytearray([0, 103])
+
+while True:
+    ser.write(barr)
+    time.sleep(1)
